@@ -16,3 +16,8 @@ h1 {
 hr {
     border: 1px solid lightgrey;
 }
+
+div {
+    display: flex;
+    flex-direction: row;
+}
