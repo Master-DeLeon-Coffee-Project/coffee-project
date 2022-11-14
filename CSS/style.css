@@ -4,7 +4,7 @@ table {
 }
 
 td, th {
-    border: 1px solid black;
+    border: none;
     padding: 5px 10px;
 }
 
@@ -15,9 +15,17 @@ h1 {
 
 hr {
     border: 1px solid lightgrey;
+    margin: 2em;
 }
 
-div {
+#container {
     display: flex;
     flex-direction: row;
+    justify-content: center;
+}
+
+#coffee-input {
+    display: flex;
+    flex-direction: column;
+    margin: 2em;
 }
