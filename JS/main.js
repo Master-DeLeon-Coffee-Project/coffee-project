@@ -2,8 +2,8 @@
 
 function renderCoffee(coffee) {
     var html = '<tr class="coffee">';
-    html += '<td>' + coffee.name + '</td>';
-    html += '<td>' + coffee.roast + '</td>';
+    html += '<td class="coffeename">' + coffee.name + '</td>';
+    html += '<td class="roast">' + coffee.roast + '</td>';
     html += '</tr>';
 
     return html;
@@ -57,3 +57,5 @@ tbody.innerHTML = renderCoffees(coffees);
 submitButton.addEventListener('click', updateCoffees);
 
 coffeeName.addEventListener("keyup", updateCoffees);
+
+

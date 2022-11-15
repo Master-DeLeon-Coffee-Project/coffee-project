@@ -1,11 +1,29 @@
-table {
-    border-collapse: collapse;
-    margin: 15px 0;
+/*table {*/
+/*    box-sizing: border-box;*/
+/*}*/
+
+.coffee {
+    width: 50%;
+    padding: 5px;
 }
 
-td, th {
+td {
     border: none;
     padding: 5px 10px;
+}
+
+.coffeename {
+    font-size: x-large;
+}
+
+.roast {
+    color: grey;
+    font-size: large;
+}
+
+h3 {
+    display: flex;
+    justify-content: center;
 }
 
 h1 {
@@ -22,10 +40,9 @@ hr {
     display: flex;
     flex-direction: row;
     justify-content: center;
+    margin: 2em;
 }
 
-#coffee-input {
-    display: flex;
-    flex-direction: column;
-    margin: 2em;
+label {
+    font-weight: bold;
 }

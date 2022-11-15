@@ -7,48 +7,63 @@
     <link rel="stylesheet" href="CSS/style.css">
 </head>
 <body>
-    <h1>Coffee!</h1>
-    <hr>
-    <div id="container">
-    <table>
-        <thead>
-        <tr>
-            <th>NAME</th>
-            <th>ROAST</th>
-        </tr>
-        </thead>
-        <tbody id="coffees"></tbody>
-    </table>
-    <div id="coffee-input">
-        <form>
-        <h5>Roast</h5>
-        <label for="roast-selection"></label>
-        <select id="roast-selection">
-            <option>All</option>
-            <option>light</option>
-            <option>medium</option>
-            <option>dark</option>
-        </select>
-        <h5>Coffee Name</h5>
-        <input type="text" class="form-control" id="CoffeeName">
-        <input id="submit" type="submit">
-        </form>
-<br>
-    <form id="coffee-list">
-        <h3>Add a Coffee</h3>
-        <h5>Roast</h5>
-        <label for="roast"></label>
-        <select id="roast">
-            <option>All</option>
-            <option>light</option>
-            <option>medium</option>
-            <option>dark</option>
-        </select>
-        <h5>Name</h5>
-        <input type="text" class="form-control" id="Name">
-        <input id="submit2" type="submit">
-    </form>
-    </div>
+
+    <nav>
+        <h1>Coffee!</h1>
+        <hr>
+    </nav>
+
+    <div id="container" class="row">
+        <div id="coffee-types" class="col-6">
+            <table>
+                <tbody id="coffees" class="row"></tbody>
+            </table>
+        </div>
+
+        <div class="col-6">
+
+            <form id="coffee-input">
+
+                <label for="roast-selection">Roast</label>
+                <select class="form-select" id="roast-selection" aria-label="roast-selection">
+                    <option selected>All</option>
+                    <option value="1">light</option>
+                    <option value="2">medium</option>
+                    <option value="3">dark</option>
+                </select>
+
+                <br>
+
+                <label for="CoffeeName">Coffee Name</label>
+                <input type="text" class="form-control" id="CoffeeName">
+                <br>
+                <div class="d-grid gap-2">
+                    <input class="btn btn-primary" id="submit" type="submit">
+                </div>
+            </form>
+
+            <hr>
+
+            <form id="coffee-list">
+                <h3>Add a Coffee</h3>
+
+                <label for="roast-type">Roast</label>
+                <select class="form-select" id="roast-type" aria-label="roast-type">
+                    <option selected>dark</option>
+                    <option value="1">light</option>
+                    <option value="2">medium</option>
+                </select>
+
+                <br>
+
+                <label for="entercoffeeName">Name</label>
+                <input type="text" class="form-control" id="entercoffeeName">
+                <br>
+                <div class="d-grid gap-2">
+                    <input class="btn btn-primary submitButton" id="submitButton" type="submit">
+                </div>
+            </form>
+        </div>
     </div>
 
 
