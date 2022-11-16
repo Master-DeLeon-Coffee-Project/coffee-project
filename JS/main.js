@@ -35,7 +35,7 @@ console.log(updateCoffees);
 
 function addNewCoffee(coffee) {
     let newCoffee = [{name: newCoffeeInput, roast: newCoffeeRoast}]
-    newCoffee.push(coffees)
+    coffees.push(newCoffee)
     tbody.innerHTML = renderCoffees(newCoffee);
 }
 
@@ -61,8 +61,8 @@ var coffeeName = document.querySelector("#CoffeeName");
 var tbody = document.querySelector('#coffees');
 var submitButton = document.querySelector('#submit');
 var roastSelection = document.querySelector('#roast-selection');
-var newCoffeeInput = document.querySelector('#entercoffeeName');
-var newCoffeeRoast = document.querySelector('#roasttype')
+var newCoffeeInput = document.querySelector('#entercoffeeName').value;
+var newCoffeeRoast = document.querySelector('#roasttype').value;
 var newCoffeeSubmit = document.querySelector('#submitButton')
 
 tbody.innerHTML = renderCoffees(coffees);
