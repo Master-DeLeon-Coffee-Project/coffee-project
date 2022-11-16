@@ -21,11 +21,13 @@ function updateCoffees(e) {
     e.preventDefault(); // don't submit the form, we just want to update the data
     var selectedRoast = roastSelection.value;
     var filteredCoffees = [];
-    coffees.forEach(function(coffee) {
-        if (coffee.roast === selectedRoast && coffee.name.toLowerCase().includes(coffeeName.value)) {
-            filteredCoffees.push(coffee);
-        }
-    });
+        coffees.forEach(function (coffee) {
+            if (selectedRoast === 'all' && coffee.name.toLowerCase().includes(coffeeName.value)) {
+                filteredCoffees.push(coffee);
+            } else if (coffee.roast === selectedRoast && coffee.name.toLowerCase().includes(coffeeName.value)) {
+                filteredCoffees.push(coffee);
+            }
+        });
     tbody.innerHTML = renderCoffees(filteredCoffees);
 }
 console.log(updateCoffees);
