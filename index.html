@@ -15,9 +15,7 @@
 
     <div id="container" class="row">
         <div id="coffee-types" class="col-6">
-            <table>
-                <tbody id="coffees" class="row"></tbody>
-            </table>
+           <div id="coffees" class="row row-cols-2"></div>
         </div>
 
         <div class="col-6">
@@ -49,9 +47,9 @@
 
                 <label for="roasttype">Roast</label>
                 <select class="form-select" id="roasttype" aria-label="roasttype">
-                    <option selected value="dark">dark</option>
-                    <option value="light">light</option>
-                    <option value="medium">medium</option>
+                    <option value="3">dark</option>
+                    <option value="1">light</option>
+                    <option value="2">medium</option>
                 </select>
 
                 <br>
@@ -60,7 +58,7 @@
                 <input type="text" class="form-control" id="entercoffeeName">
                 <br>
                 <div class="d-grid gap-2">
-                    <input class="btn btn-primary submitButton" id="submitButton" type="submit">
+                    <button class="btn btn-primary submitButton" id="submitButton" type="button"></button>
                 </div>
             </form>
         </div>

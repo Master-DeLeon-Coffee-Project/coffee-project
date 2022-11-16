@@ -1,20 +1,7 @@
 "use strict"
+let roastinput = "";
+function () {
 
-function renderCoffee(coffee) {
-    var html = '<tr class="coffee">';
-    html += '<td class="coffeename">' + coffee.name + '</td>';
-    html += '<td class="roast">' + coffee.roast + '</td>';
-    html += '</tr>';
-
-    return html;
-}
-
-function renderCoffees(coffees) {
-    var html = '';
-    for(var i = coffees.length - 1; i >= 0; i--) {
-        html += renderCoffee(coffees[i]);
-    }
-    return html;
 }
 
 function updateCoffees(e) {
@@ -33,12 +20,12 @@ function updateCoffees(e) {
 console.log(updateCoffees);
 
 
-function addNewCoffee(coffee) {
-    let newCoffee = [{name: newCoffeeInput, roast: newCoffeeRoast}]
+function addNewCoffee() {
+    let newCoffee = {id:0, name: newCoffeeInput.value, roast: roastinput}
     coffees.push(newCoffee)
     tbody.innerHTML = renderCoffees(newCoffee);
+    console.log(newCoffee)
 }
-
 
 // from http://www.ncausa.org/About-Coffee/Coffee-Roasts-Guide
 var coffees = [
@@ -61,8 +48,8 @@ var coffeeName = document.querySelector("#CoffeeName");
 var tbody = document.querySelector('#coffees');
 var submitButton = document.querySelector('#submit');
 var roastSelection = document.querySelector('#roast-selection');
-var newCoffeeInput = document.querySelector('#entercoffeeName').value;
-var newCoffeeRoast = document.querySelector('#roasttype').value;
+var newCoffeeInput = document.querySelector('#entercoffeeName');
+var newCoffeeRoast = document.querySelector('#roasttype');
 var newCoffeeSubmit = document.querySelector('#submitButton')
 
 tbody.innerHTML = renderCoffees(coffees);
@@ -71,6 +58,17 @@ submitButton.addEventListener('click', updateCoffees);
 
 coffeeName.addEventListener("keyup", updateCoffees);
 
+newCoffeeRoast.addEventListener("change", function (){
+    let selection = this.value;
+    if (selection === "1"){
+        roastinput = "light";
+    } else if (selection === "2"){
+        roastinput = "medium";
+    } else {
+        roastinput = "dark"
+    }
+});
 
+newCoffeeSubmit.addEventListener("click", addNewCoffee);
 
 
