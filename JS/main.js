@@ -34,9 +34,9 @@ console.log(updateCoffees);
 
 
 function addNewCoffee(coffee) {
-    let newCoffeeRoast = roasttype;
-    let newCoffeeInput = enterCoffeeName;
-    addNewCoffee.push(newCoffeeRoast, newCoffeeInput)
+    let newCoffee = [{name: newCoffeeInput, roast: newCoffeeRoast}]
+    newCoffee.push(coffees)
+    tbody.innerHTML = renderCoffees(newCoffee);
 }
 
 
