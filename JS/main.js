@@ -1,7 +1,22 @@
+(function () {
 "use strict"
-let roastinput = "";
-function () {
 
+
+function renderCoffee(coffee) {
+    var html = '<div class="coffee">';
+    html += '<h1 class="coffeename">' + coffee.name + '</h1>';
+    html += '<p class="roast">' + coffee.roast + '</p>';
+    html += '</div>';
+
+    return html;
+}
+
+function renderCoffees(coffees) {
+    var html = '';
+    for(var i = coffees.length - 1; i >= 0; i--) {
+        html += renderCoffee(coffees[i]);
+    }
+    return html;
 }
 
 function updateCoffees(e) {
@@ -21,9 +36,9 @@ console.log(updateCoffees);
 
 
 function addNewCoffee() {
-    let newCoffee = {id:0, name: newCoffeeInput.value, roast: roastinput}
+    let newCoffee = {id:0, name: newCoffeeInput.value, roast: newCoffeeRoast.value}
     coffees.push(newCoffee)
-    tbody.innerHTML = renderCoffees(newCoffee);
+    tbody.innerHTML = renderCoffees(coffees);
     console.log(newCoffee)
 }
 
@@ -58,6 +73,7 @@ submitButton.addEventListener('click', updateCoffees);
 
 coffeeName.addEventListener("keyup", updateCoffees);
 
+let roastinput = "";
 newCoffeeRoast.addEventListener("change", function (){
     let selection = this.value;
     if (selection === "1"){
@@ -72,3 +88,5 @@ newCoffeeRoast.addEventListener("change", function (){
 newCoffeeSubmit.addEventListener("click", addNewCoffee);
 
 
+
+})();
